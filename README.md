@@ -2,15 +2,11 @@
 
 **Production-style cloud application built for Mertmart Group**, demonstrating real-world **Cloud Engineering, DevOps, and Security practices** using AWS.
 
----
-
 ## 🧠 Project Overview
 
 This project is a **containerized Flask web application** deployed on AWS using modern cloud-native architecture. It serves as part of the **Mertmart Group platform**, supporting internal business workflows while showcasing scalable and secure deployment strategies.
 
 💡 Designed to reflect **real-world DevOps and cloud engineering practices**, not just a demo project.
-
----
 
 ## 🏗️ Architecture
 
@@ -33,8 +29,6 @@ This project is a **containerized Flask web application** deployed on AWS using 
 * **Monitoring:** AWS CloudWatch
 * **Networking:** VPC with public/private subnets
 
----
-
 ## ⚙️ Key Features
 
 * ✅ Containerized application for consistent deployment
@@ -43,8 +37,6 @@ This project is a **containerized Flask web application** deployed on AWS using 
 * ✅ Load-balanced architecture for high availability
 * ✅ Secure IAM-based access control
 * ✅ Centralized logging and monitoring
-
----
 
 ## 🧩 Real-World Business Context (Mertmart)
 
@@ -55,8 +47,6 @@ This application is actively used as part of the **Mertmart Group cloud platform
 * Demonstrates how small businesses can leverage **enterprise-grade cloud architecture**
 
 💥 This transforms the project from a “demo” → **real engineering experience**
-
----
 
 ## 🚀 Deployment Workflow
 
@@ -71,9 +61,6 @@ docker tag mertmart-app:latest <ECR-REPO-URI>
 docker push <ECR-REPO-URI>
 
 # Deploy via ECS Fargate (via console or CI/CD)
-```
-
----
 
 ## 🔁 CI/CD Pipeline
 
@@ -84,8 +71,6 @@ docker push <ECR-REPO-URI>
 
 💡 Enables **fast, repeatable, and reliable deployments**
 
----
-
 ## 🔐 Security Considerations
 
 * IAM roles with **least privilege access**
@@ -94,8 +79,6 @@ docker push <ECR-REPO-URI>
 * Network isolation via VPC and security groups
 * Monitoring and logging via CloudWatch
 
----
-
 ## 📂 Project Structure
 
 ```id="mjla00"
@@ -103,8 +86,6 @@ docker push <ECR-REPO-URI>
 ├── Dockerfile          # Container configuration
 ├── requirements.txt    # Dependencies
 ```
-
----
 
 ## 📊 Skills Demonstrated
 
@@ -115,8 +96,6 @@ docker push <ECR-REPO-URI>
 * Cloud Security (IAM, Networking)
 * Monitoring & Observability (CloudWatch)
 
----
-
 ## 📈 Future Enhancements
 
 * 🔹 Add database integration (Amazon RDS / DynamoDB)
@@ -125,13 +104,9 @@ docker push <ECR-REPO-URI>
 * 🔹 Integrate advanced monitoring dashboards
 * 🔹 Introduce basic fraud/anomaly detection logic
 
----
-
 ## 👤 Author
 
 **Richard Kweku Addae**
 Cloud & DevOps Engineer | AWS Certified Solutions Architect
 [LinkedIn](https://linkedin.com/in/richard-addae)
 [GitHub](https://github.com/codrich)
-
----
