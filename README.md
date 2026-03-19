@@ -137,7 +137,7 @@ Then open:
 
 ---
 
-## 📸 Screenshots (Add Yours)
+## 📸 Screenshots
 
 ![Image](https://www.researchgate.net/publication/301443552/figure/fig3/AS%3A724329746665474%401549705077433/Screenshot-of-Amazon-EC2-Management-Console-showing-the-running-instances.ppm)
 
