@@ -1,56 +1,95 @@
-# 🚀 Mertmart Cloud Application (Flask + AWS ECS Fargate)
+# 🚀 Mertmart Cloud Platform – Flask App on AWS ECS Fargate
 
-**Production-style cloud application built for Mertmart Group**, demonstrating real-world **Cloud Engineering, DevOps, and Security practices** using AWS.
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
+![Docker](https://img.shields.io/badge/Docker-Container-blue)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-success)
+![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
+![Status](https://img.shields.io/badge/Project-Production--Style-brightgreen)
 
-## 🧠 Project Overview
+---
 
-This project is a **containerized Flask web application** deployed on AWS using modern cloud-native architecture. It serves as part of the **Mertmart Group platform**, supporting internal business workflows while showcasing scalable and secure deployment strategies.
+## 🧠 Overview
 
-💡 Designed to reflect **real-world DevOps and cloud engineering practices**, not just a demo project.
+This project is a **production-style cloud application** built for **Mertmart Group**, showcasing real-world implementation of:
 
-## 🏗️ Architecture
+* Cloud Infrastructure (AWS)
+* DevOps & CI/CD Automation
+* Containerized Deployments
+* Cloud Security Best Practices
+
+💡 Unlike typical demo projects, this system is designed to **support actual business workflows**, making it a practical example of cloud engineering in action.
+
+---
+
+## 🏗️ Architecture Diagram
 
 ![Image](https://miro.medium.com/1%2AjcmnWZ5X17ABsRgJXCaiUA.png)
 
-![Image](https://media2.dev.to/dynamic/image/width%3D1600%2Cheight%3D900%2Cfit%3Dcover%2Cgravity%3Dauto%2Cformat%3Dauto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fefsjl54qspy1muw7j7kk.png)
+![Image](https://d2908q01vomqb2.cloudfront.net/7719a1c782a1ba91c031a682a0a2f8658209adbf/2022/03/27/1-ArchitectureDiagram.png)
 
-![Image](https://d2908q01vomqb2.cloudfront.net/fe2ef495a1152561572949784c16bf23abb28057/2020/02/05/Screen-Shot-2020-01-08-at-5.55.15-PM.png)
+![Image](https://media2.dev.to/dynamic/image/width%3D1000%2Cheight%3D500%2Cfit%3Dcover%2Cgravity%3Dauto%2Cformat%3Dauto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fddvi9pya9qo8o8zs6a8o.png)
 
-![Image](https://media2.dev.to/dynamic/image/width%3D1280%2Cheight%3D720%2Cfit%3Dcover%2Cgravity%3Dauto%2Cformat%3Dauto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgnnd2c1i7ksf3ou2fu7q.png)
+![Image](https://miro.medium.com/v2/resize%3Afit%3A1400/1%2AQbdXPsgP0lGNifMcQzgANQ.jpeg)
 
-### 🔹 Components
+### 🔹 Architecture Flow
 
-* **Application:** Python Flask
-* **Containerization:** Docker
-* **Registry:** Amazon Elastic Container Registry (ECR)
-* **Compute:** AWS ECS Fargate (serverless containers)
-* **Load Balancer:** Application Load Balancer (ALB)
-* **CI/CD:** GitHub Actions
-* **Monitoring:** AWS CloudWatch
-* **Networking:** VPC with public/private subnets
+1. User request hits **Application Load Balancer (ALB)**
+2. Traffic routed to **ECS Fargate service**
+3. Containers pull images from **Amazon ECR**
+4. Logs and metrics sent to **CloudWatch**
+5. CI/CD pipeline updates application automatically
 
-## ⚙️ Key Features
+---
 
-* ✅ Containerized application for consistent deployment
-* ✅ Scalable serverless compute using ECS Fargate
-* ✅ Automated CI/CD pipeline for rapid deployment
-* ✅ Load-balanced architecture for high availability
-* ✅ Secure IAM-based access control
-* ✅ Centralized logging and monitoring
+## ⚙️ Core Features
 
-## 🧩 Real-World Business Context (Mertmart)
+* 🚀 Containerized Flask application (Docker)
+* ☁️ Serverless compute using ECS Fargate
+* 🔁 Automated CI/CD with GitHub Actions
+* ⚖️ Load-balanced architecture for scalability
+* 🔐 IAM-based security and access control
+* 📊 Monitoring and logging with CloudWatch
 
-This application is actively used as part of the **Mertmart Group cloud platform**:
+---
 
-* Supports **internal business operations**
-* Serves as a base for **inventory and order management systems**
-* Demonstrates how small businesses can leverage **enterprise-grade cloud architecture**
+## 🧩 Real-World Business Impact (Mertmart)
 
-💥 This transforms the project from a “demo” → **real engineering experience**
+This system is part of **Mertmart Group’s cloud platform**, enabling:
 
-## 🚀 Deployment Workflow
+* Internal business operations support
+* Foundation for inventory and order management
+* Scalable infrastructure for future growth
 
-```bash
+💥 Demonstrates how small businesses can adopt **enterprise-grade cloud solutions**
+
+---
+
+## 🔁 CI/CD Pipeline
+
+```yaml id="m6t2wr"
+name: Deploy to AWS ECS
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+```
+
+### Pipeline Flow:
+
+* Push code → GitHub
+* Build Docker image
+* Push to Amazon ECR
+* Deploy to ECS Fargate
+
+---
+
+## 🚀 Deployment Steps
+
+```bash id="65myrg"
 # Build Docker image
 docker build -t mertmart-app .
 
@@ -59,54 +98,103 @@ docker tag mertmart-app:latest <ECR-REPO-URI>
 
 # Push to ECR
 docker push <ECR-REPO-URI>
+```
 
-# Deploy via ECS Fargate (via console or CI/CD)
+---
 
-## 🔁 CI/CD Pipeline
-
-* Code pushed to GitHub
-* GitHub Actions builds Docker image
-* Image pushed to Amazon ECR
-* ECS service updated automatically
-
-💡 Enables **fast, repeatable, and reliable deployments**
-
-## 🔐 Security Considerations
+## 🔐 Security Implementation
 
 * IAM roles with **least privilege access**
-* Secure container image storage in ECR
-* Environment variables for sensitive configurations
-* Network isolation via VPC and security groups
-* Monitoring and logging via CloudWatch
+* Secure container registry (ECR)
+* Network isolation via VPC & Security Groups
+* Environment variable management for secrets
+* Centralized logging (CloudWatch)
+
+---
+
+## 💻 Run Locally
+
+```bash id="2m0z11"
+# Install dependencies
+pip install -r requirements.txt
+
+# Run app
+python app.py
+```
+
+Then open:
+👉 [http://localhost:5000](http://localhost:5000)
+
+---
 
 ## 📂 Project Structure
 
 ```id="mjla00"
-├── app.py              # Flask application
-├── Dockerfile          # Container configuration
-├── requirements.txt    # Dependencies
+├── app.py
+├── Dockerfile
+├── requirements.txt
 ```
+
+---
+
+## 📸 Screenshots (Add Yours)
+
+![Image](https://www.researchgate.net/publication/301443552/figure/fig3/AS%3A724329746665474%401549705077433/Screenshot-of-Amazon-EC2-Management-Console-showing-the-running-instances.ppm)
+
+![Image](https://d2908q01vomqb2.cloudfront.net/972a67c48192728a34979d9a35164c1295401b71/2020/10/15/Sampledashboard.png)
+
+![Image](https://media.amazonwebservices.com/blog/2016/alb_add_rule_1.png)
+
+![Image](https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2019/10/06/2019-10-06_15-50-35.png)
+
+💡 Replace these with your actual screenshots:
+
+* ECS running service
+* CloudWatch logs
+* ALB DNS working
+* App in browser
+
+---
+
+## 🛠️ Tech Stack
+
+* Python (Flask)
+* Docker
+* AWS ECS Fargate
+* Amazon ECR
+* GitHub Actions
+* AWS CloudWatch
+* Terraform (Infrastructure provisioning)
+
+---
 
 ## 📊 Skills Demonstrated
 
-* Cloud Infrastructure (AWS)
-* Containerization (Docker)
-* Orchestration (ECS Fargate)
-* CI/CD Automation (GitHub Actions)
-* Cloud Security (IAM, Networking)
-* Monitoring & Observability (CloudWatch)
+* Cloud Architecture (AWS)
+* Infrastructure as Code (Terraform)
+* DevOps & CI/CD
+* Containerization
+* Cloud Security
+* Monitoring & Observability
+
+---
 
 ## 📈 Future Enhancements
 
-* 🔹 Add database integration (Amazon RDS / DynamoDB)
-* 🔹 Implement authentication (JWT / Cognito)
-* 🔹 Add autoscaling policies
-* 🔹 Integrate advanced monitoring dashboards
-* 🔹 Introduce basic fraud/anomaly detection logic
+* 🔹 Database integration (RDS / DynamoDB)
+* 🔹 Authentication system (JWT / AWS Cognito)
+* 🔹 Auto-scaling policies
+* 🔹 Advanced monitoring dashboards
+* 🔹 Basic anomaly/fraud detection
+
+---
 
 ## 👤 Author
 
 **Richard Kweku Addae**
 Cloud & DevOps Engineer | AWS Certified Solutions Architect
-[LinkedIn](https://linkedin.com/in/richard-addae)
-[GitHub](https://github.com/codrich)
+
+🔗 [https://linkedin.com/in/richard-addae](https://linkedin.com/in/richard-addae)
+🔗 [https://github.com/codrich](https://github.com/codrich)
+
+---
