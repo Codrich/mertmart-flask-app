@@ -1,10 +1,6 @@
 # 🚀 Mertmart Cloud Platform – Flask App on AWS ECS Fargate
 
-![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
-![Docker](https://img.shields.io/badge/Docker-Container-blue)
-![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-success)
-![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
-![Status](https://img.shields.io/badge/Project-Production--Style-brightgreen)
+![Architecture](./architecture.png)
 
 ---
 
